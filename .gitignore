@@ -1,0 +1,2 @@
+# Exclude irrelevant files on MacOS
+node_modules/
