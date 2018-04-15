@@ -22,7 +22,10 @@ class ListItem extends React.Component{
 	render(){
 		return(
 			<div>
-			<input value={this.state.searchedVal} onChange={this.onChange}></input> 
+			<input placeholder= 'Search for a movie...' value={this.state.searchedVal} onChange={this.onChange}></input> 
+			<br/>
+			<br/>
+			<br/>
 			<button onClick={this.onClick}>Search</button>
 			</div>
 			)

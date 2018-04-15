@@ -43,7 +43,6 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <h1>Movies List</h1>
       <List items={this.state.items}/>
       <ListItem onSearch={this.componentDidMount.bind(this)}/>
       </div>)

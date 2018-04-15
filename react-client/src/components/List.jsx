@@ -3,14 +3,11 @@ import ListItem from './ListItem.jsx';
 
 const List = (props) => (
 	<div>
-	<h4> Movies Component </h4>
 	There are { props.items.length } movies.
 	{
 		props.items.map(function(item){
 			return <div>
-			<h6> {item.title} {item.year} {item.type} </h6>
-			
-
+			<h3> {item.title} </h3> {'\n'}<h4>{item.year} {item.type} </h4>
 			</div>
 		})
 	}
