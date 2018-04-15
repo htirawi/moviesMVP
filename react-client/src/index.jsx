@@ -13,10 +13,11 @@ class App extends React.Component {
   }
 
   componentDidMount(value) {
+    if(value){
     $.ajax({
       url: '/items', 
       type: 'POST',
-      data : {title : value},
+      data : {movieName : value},
       success: (data) => {
         console.log(data)
       },
@@ -24,6 +25,7 @@ class App extends React.Component {
         console.log('err', err);
       }
     });
+  }
 
     $.ajax({
       url: '/items', 

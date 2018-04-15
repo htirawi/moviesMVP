@@ -17,7 +17,6 @@ class ListItem extends React.Component{
 		this.setState({
 			searchedVal:e.target.value
 		})
-
 	}
 
 	render(){

@@ -13,9 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.static(__dirname + '/../react-client/dist'));
 
-app.post('/items', function(req,res){	
-	omdb.getMovies(req.body);
-	console.log(req.body)
+app.post('/items', function(req,res){
+	console.log("khalid" , req.body)
+	omdb.getMoviesByTitle(req.body.movieName);
+	
 	db.save(req.body,function(err,data){
 		if(err){
 			console.log(err)

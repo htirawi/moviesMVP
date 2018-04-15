@@ -11,29 +11,28 @@ let getMoviesByTitle = (title) =>{
 			'user-agent': 'hussein'
 		}
 	};
-
-
 	function getMovies(err,res,body){
-		if(!error && response.statusCode === 200){
+		if(!err && res.statusCode === 200){
 			var mov = JSON.parse(body);
-			console.log(mov.length);
-			for(var i = 0 ; i < mov.length;i++){
+			// console.log("HHH",mov['Search'].length);
+			for(var i = 0 ; i < mov['Search'].length;i++){
+				 console.log(mov['Search'][0].Title)
 				save.save({
-					title : mov[i].name,
-					year : mov[i].year,
-					type : mov[i].type
+					title : mov['Search'][i].Title,
+					year : mov['Search'][i].Year,
+					type : mov['Search'][i].Type
 				}, function(err,data){
 					if(err){
 						console.log(err);
 					}
 					else{
-						console.log(data)
+						console.log("raed",data)
 					}
 				})
 			}
 		}
 
 	}
-	request(options,callback)
+	request(options,getMovies);
 }
 module.exports.getMoviesByTitle = getMoviesByTitle;

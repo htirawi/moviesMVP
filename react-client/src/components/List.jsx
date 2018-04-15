@@ -8,9 +8,8 @@ const List = (props) => (
 	{
 		props.items.map(function(item){
 			return <div>
-			<h1> {item.title} </h1>
-			<h4> {item.year} </h4>
-			<h4> {item.type} </h4>
+			<h6> {item.title} {item.year} {item.type} </h6>
+			
 
 			</div>
 		})

@@ -31,6 +31,7 @@ var selectAll = function(callback) {
 };
 
 let save = (data,callback) =>{
+  console.log("data",data)
   let item = new Item(data)
   console.log(data.length);
   item.save(function(err,data){
