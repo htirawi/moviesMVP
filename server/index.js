@@ -34,7 +34,12 @@ app.get('/items', function (req, res) {
 			console.log(err)
 		}
 		else{
-			res.send(data);
+			var arr = [];
+			console.log(data.length)
+			for(var i = data.length-5; i< data.length; i++){
+				arr.push(data[i]);
+			}
+			res.send(arr);
 		}
 	})
 	// items.selectAll(function(err, data) {
