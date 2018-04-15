@@ -12,7 +12,10 @@ db.once('open', function() {
 });
 
 var itemSchema = mongoose.Schema({
-  movieName : String
+  title : String,
+  year : Number,
+  type:String
+
 });
 
 var Item = mongoose.model('Item', itemSchema);
@@ -27,4 +30,17 @@ var selectAll = function(callback) {
   });
 };
 
+let save = (data,callback) =>{
+  let item = new Item(data)
+  console.log(data.length);
+  item.save(function(err,data){
+    if(err){
+      callback(err)
+    }else{
+      callback(null,data)
+    }
+  })
+}
 module.exports.selectAll = selectAll;
+module.exports.save = save;
+module.exports.Item = Item;
