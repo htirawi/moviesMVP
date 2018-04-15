@@ -16,7 +16,7 @@ class App extends React.Component {
     $.ajax({
       url: '/items', 
       type: 'POST',
-      data : {movieName : value},
+      data : {title : value},
       success: (data) => {
         console.log(data)
       },
